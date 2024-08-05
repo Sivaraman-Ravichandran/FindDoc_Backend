@@ -25,9 +25,9 @@ public class UserController {
         return id;
     }
 	@PostMapping("/login")
-	public ResponseEntity<String> login(@RequestBody User user) {
-		User existingUser = service.findByEmail(user.getEmail());
-		if (existingUser != null && existingUser.getPassword().equals(user.getPassword())) {
+	public ResponseEntity<String> login(@RequestBody AuthenticationDTO auth) {
+		User existingUser = service.findByEmail(auth.getEmail());
+		if (existingUser != null && existingUser.getPassword().equals(auth.getPassword())) {
 			return new ResponseEntity<>("Login Successful", HttpStatus.OK);
 		} else {
 			return new ResponseEntity<>("Invalid Username or Password", HttpStatus.UNAUTHORIZED);
