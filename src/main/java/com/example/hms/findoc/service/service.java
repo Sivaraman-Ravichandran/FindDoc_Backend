@@ -8,6 +8,7 @@ import com.example.hms.findoc.entity.DoctorDetails;
 import com.example.hms.findoc.entity.EventsDetails;
 import com.example.hms.findoc.entity.HospitalCard;
 import com.example.hms.findoc.entity.HospitalDetails;
+import com.example.hms.findoc.entity.NewsDetails;
 import com.example.hms.findoc.entity.SpecialityCard;
 import com.example.hms.findoc.entity.User;
 
@@ -55,4 +56,10 @@ public interface service {
 	EventsDetails getEventById(int id);
 
 	EventsDetails createEvent(EventsDetails eventDetails);
+
+	List<NewsDetails> getAllNews();
+
+	NewsDetails getNewsById(int id);
+
+	NewsDetails createNews(NewsDetails newsDetails);
 }

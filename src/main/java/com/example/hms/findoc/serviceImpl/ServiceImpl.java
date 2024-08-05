@@ -11,6 +11,7 @@ import com.example.hms.findoc.entity.DoctorDetails;
 import com.example.hms.findoc.entity.EventsDetails;
 import com.example.hms.findoc.entity.HospitalCard;
 import com.example.hms.findoc.entity.HospitalDetails;
+import com.example.hms.findoc.entity.NewsDetails;
 import com.example.hms.findoc.entity.SpecialityCard;
 import com.example.hms.findoc.entity.User;
 import com.example.hms.findoc.repository.*;
@@ -31,6 +32,9 @@ HospitalDetailRepo hospitalDetailrepo;
 SpecialityCardRepo specialityCardRepo;
 @Autowired
 private EventsRepository eventsRepository;
+@Autowired
+private NewsDetailsRepository newsRepository;
+
 	@Override
 	public List<User> getAllDetails() {
 		return UserRepo.findAll() ;
@@ -150,4 +154,19 @@ private EventsRepository eventsRepository;
 	    public EventsDetails createEvent(EventsDetails eventDetails) {
 	        return eventsRepository.save(eventDetails);
 	    }
+
+	@Override
+	public List<NewsDetails> getAllNews() {
+		   return newsRepository.findAll();
+	}
+
+	@Override
+	public NewsDetails getNewsById(int id) {
+		  return newsRepository.findById(id).orElse(null);
+	}
+
+	@Override
+	public NewsDetails createNews(NewsDetails newsDetails) {
+		return newsRepository.save(newsDetails);
+	}
 }

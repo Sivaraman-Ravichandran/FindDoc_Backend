@@ -28,7 +28,6 @@ public class FormController {
                         "Amazing Hospitals",
                 contactForm.getName(), contactForm.getEmail(), contactForm.getPhone()
         );
-
         message.setText(emailContent);
         mailSender.send(message);
         return "Email Sent Successfully";
