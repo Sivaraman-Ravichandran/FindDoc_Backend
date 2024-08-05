@@ -3,6 +3,7 @@ package com.example.hms.findoc.service;
 import java.util.List;
 import java.util.Optional;
 
+import com.example.hms.findoc.dto.AuthenticationDTO;
 import com.example.hms.findoc.entity.DoctorCard;
 import com.example.hms.findoc.entity.DoctorDetails;
 import com.example.hms.findoc.entity.EventsDetails;
@@ -15,7 +16,7 @@ import com.example.hms.findoc.entity.User;
 public interface service {
 	List<User> getAllDetails();
 
-    User postAllDetails(User user);
+    String postAllDetails(AuthenticationDTO auth);
     User findByEmail(String mail);
     
 

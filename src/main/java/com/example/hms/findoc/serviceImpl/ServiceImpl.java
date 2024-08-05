@@ -2,10 +2,12 @@ package com.example.hms.findoc.serviceImpl;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.hms.findoc.dto.AuthenticationDTO;
 import com.example.hms.findoc.entity.DoctorCard;
 import com.example.hms.findoc.entity.DoctorDetails;
 import com.example.hms.findoc.entity.EventsDetails;
@@ -39,11 +41,22 @@ private NewsDetailsRepository newsRepository;
 	public List<User> getAllDetails() {
 		return UserRepo.findAll() ;
 	}
+	 @Override
+	    public String postAllDetails(AuthenticationDTO auth) {
+	        String id = auth.getId();
+	        if (id == null || id.isEmpty()) {
+	            id = UUID.randomUUID().toString();
+	        }
 
-	@Override
-	public User postAllDetails(User user) {
-		return UserRepo.save(user);
-	}
+	        User user = new User(
+	                id,
+	                auth.getEmail(),
+	                auth.getPassword()
+	        );
+
+	        UserRepo.save(user);
+	        return user.getEmail();
+	    }
 
 
 	@Override

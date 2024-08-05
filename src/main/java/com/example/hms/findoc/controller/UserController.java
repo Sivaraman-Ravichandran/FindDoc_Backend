@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import com.example.hms.findoc.dto.AuthenticationDTO;
 import com.example.hms.findoc.entity.User;
 import com.example.hms.findoc.service.service;
 @CrossOrigin(origins = "http://localhost:3000/")
@@ -19,9 +20,10 @@ public class UserController {
 		return service.getAllDetails();
 	}
 	@PostMapping("/saveUser")
-	public User postUserDetails(@RequestBody User user){
-		return service.postAllDetails(user);
-	}
+    public String postUserDetails(@RequestBody AuthenticationDTO auth) {
+		String id = service.postAllDetails(auth);
+        return id;
+    }
 	@PostMapping("/login")
 	public ResponseEntity<String> login(@RequestBody User user) {
 		User existingUser = service.findByEmail(user.getEmail());

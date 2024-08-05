@@ -1,41 +1,48 @@
 package com.example.hms.findoc.entity;
+
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
-import lombok.Getter;
-import lombok.Setter;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-@Getter
-@Setter
-@Document(collection="UserCredentials")
+
+@Document(collection = "UserCredentials")
 public class User {
-	@Id
-	@GeneratedValue(strategy= GenerationType.TABLE)
-	private int id;
-	private String email;
-	private String password;
+    @Id
+    private String id;
+    @Indexed(unique = true)
+    private String email;
+    private String password;
 
-	public int getId() {
-		return id;
-	}
+    // Constructors
+    public User() {}
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    public User(String id,String email, String password) {
+    	this.id=id;
+        this.email = email;
+        this.password = password;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    // Getters and setters
+    public String getId() {
+        return id;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public void setId(String id) {
+        this.id = id;
+    }
 
-	public String getPassword() {
-		return password;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }
