@@ -133,6 +133,8 @@ public class HospitalDetails {
 
     private String img;
     private String name;
+
+    private String specialist;
     private String location;
     private String status;
 
@@ -140,14 +142,23 @@ public class HospitalDetails {
     public Doctor() {}
 
     // Constructors
-    public Doctor(String img, String name, String location, String status) {
+    public Doctor(String id, String img, String name, String specialist, String location, String status) {
+        this.id = id;
         this.img = img;
         this.name = name;
+        this.specialist = specialist;
         this.location = location;
         this.status = status;
     }
 
     // Getters and setters
+    public String getSpecialist() {
+        return specialist;
+    }
+
+    public void setSpecialist(String specialist) {
+        this.specialist = specialist;
+    }
     public String getStatus() {
         return status;
     }
