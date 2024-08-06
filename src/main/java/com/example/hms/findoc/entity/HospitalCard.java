@@ -9,7 +9,6 @@ public class HospitalCard {
     private int id;
     private String Hname;
     private String Himg;
-    private String Hspeciality;
     private String Hlocation;
 
     public int getId() {
@@ -36,13 +35,6 @@ public class HospitalCard {
         Himg = himg;
     }
 
-    public String getHspeciality() {
-        return Hspeciality;
-    }
-
-    public void setHspeciality(String hspeciality) {
-        Hspeciality = hspeciality;
-    }
 
     public String getHlocation() {
         return Hlocation;

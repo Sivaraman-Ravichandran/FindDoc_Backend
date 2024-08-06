@@ -14,7 +14,7 @@ public class EventController {
     @Autowired
    service eventsService;
 
-    @GetMapping("getEvents")
+    @GetMapping("/getEvents")
     public ResponseEntity<List<EventsDetails>> getAllEvents() {
         List<EventsDetails> events = eventsService.getAllEvents();
         return ResponseEntity.ok(events);

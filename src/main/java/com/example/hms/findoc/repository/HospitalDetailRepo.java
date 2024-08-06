@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 
 import com.example.hms.findoc.entity.HospitalDetails;
 @Repository
-public interface HospitalDetailRepo extends MongoRepository<HospitalDetails,Integer>{
+public interface HospitalDetailRepo extends MongoRepository<HospitalDetails,String>{
 
 }

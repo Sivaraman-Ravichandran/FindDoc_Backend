@@ -4,14 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.example.hms.findoc.dto.AuthenticationDTO;
-import com.example.hms.findoc.entity.DoctorCard;
-import com.example.hms.findoc.entity.DoctorDetails;
-import com.example.hms.findoc.entity.EventsDetails;
-import com.example.hms.findoc.entity.HospitalCard;
-import com.example.hms.findoc.entity.HospitalDetails;
-import com.example.hms.findoc.entity.NewsDetails;
-import com.example.hms.findoc.entity.SpecialityCard;
-import com.example.hms.findoc.entity.User;
+import com.example.hms.findoc.entity.*;
 
 public interface service {
 	List<User> getAllDetails();
@@ -44,7 +37,7 @@ public interface service {
 
 	void insertDetailsHospital(HospitalDetails h);
 
-	Optional<HospitalDetails> selectById(int n);
+	Optional<HospitalDetails> selectById(String n);
 
 	List<SpecialityCard> getSpecialityCard();
 

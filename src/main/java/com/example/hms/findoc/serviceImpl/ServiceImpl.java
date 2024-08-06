@@ -53,7 +53,6 @@ private NewsDetailsRepository newsRepository;
 	                auth.getEmail(),
 	                auth.getPassword()
 	        );
-
 	        UserRepo.save(user);
 	        return user.getEmail();
 	    }
@@ -137,7 +136,7 @@ private NewsDetailsRepository newsRepository;
 	}
 
 	@Override
-	public Optional<HospitalDetails> selectById(int n) {
+	public Optional<HospitalDetails> selectById(String n) {
 		return hospitalDetailrepo.findById(n);
 	}
 
