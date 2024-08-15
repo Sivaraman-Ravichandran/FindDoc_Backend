@@ -10,7 +10,6 @@ import java.util.List;
 
 @RestController
 public class EventController {
-
     @Autowired
    service eventsService;
 
@@ -19,7 +18,6 @@ public class EventController {
         List<EventsDetails> events = eventsService.getAllEvents();
         return ResponseEntity.ok(events);
     }
-
     @GetMapping("/getEvent/{id}")
     public ResponseEntity<EventsDetails> getEventById(@PathVariable int id) {
         EventsDetails event = eventsService.getEventById(id);

@@ -25,7 +25,7 @@ public class FormController {
         // Creating a SimpleMailMessage object to set up the email
         SimpleMailMessage message = new SimpleMailMessage();
         // Setting the recipient email address
-        message.setTo("disruptorstech@gmail.com");
+        message.setTo("sivsecuredata@gmail.com"); 
         // Setting the subject of the email
         message.setSubject("New Contact Form Submission");
         // Formatting the email content with the details from the ContactForm object
